@@ -41,8 +41,17 @@ def main() -> None:
             effect=lambda: None,
         )),
         debug_color=(0, 0, 255)
-
     ))
+    buttons.append(Button(
+        surface=(button_surface := display.get_font().render("Xander", False, (255, 0, 0), (0, 0, 0))),
+        topleft=(random.randrange(display.get_internal_surface().get_width()), random.randrange(0,display.get_internal_surface().get_height())),
+        effect=lambda: None,                 
+    ))
+    buttons.append(Button(
+        surface=(button_surface := display.get_font().render("Holly", False, (0, 255, 0), (0, 0, 0))),
+        topleft=(random.randrange(display.get_internal_surface().get_width()), random.randrange(0,display.get_internal_surface().get_height())),
+        effect=lambda: None,
+    ))    
 
     # Main loop
     while True:
