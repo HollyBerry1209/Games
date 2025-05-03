@@ -61,6 +61,11 @@ class Button(pygame.sprite.Sprite):
     def get_rect(self) -> pygame.Rect:
         return self.__rect
 
+    '''SETTERS'''
+    
+    def set_surface(self, new_surface) -> None:
+        self.__surface = new_surface
+
     '''DUNDERS'''
 
     def __repr__(self) -> str:

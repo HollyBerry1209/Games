@@ -32,6 +32,17 @@ def main() -> None:
         topleft=(display.get_internal_surface().get_width() // 2 - button_surface.get_width() // 2, display.get_internal_surface().get_height() // 2 - button_surface.get_height() // 2 - 50),
         effect=lambda: setattr(game, 'BACKGROUND_COLOR', (255, 0, 0)),
     ))
+    buttons.append(Button(
+        surface=(button_surface := display.get_font().render("Really Cool Magic Button Does Cool Thing", False, (255, 128, 0), (200, 200, 200))),
+        topleft=(display.get_internal_surface().get_width() // 2 - button_surface.get_width() // 2, 0),
+        effect=lambda: buttons.append(Button(
+            surface=(button_surface := display.get_font().render("Good Morrow", False, (0, 0, 0), (200, 200, 200))),
+            topleft=(random.randrange(0, display.get_internal_surface().get_width()), random.randrange(0, display.get_internal_surface().get_height())),
+            effect=lambda: None,
+        )),
+        debug_color=(0, 0, 255)
+
+    ))
 
     # Main loop
     while True:
