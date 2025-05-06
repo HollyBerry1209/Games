@@ -18,6 +18,8 @@ class Display:
         '__external_resolution',
         '__title',
         '__font',
+        '__font2',
+        '__font3',
         '__debug_font',
         '__internal_surface',
         '__screen'
@@ -46,6 +48,8 @@ class Display:
         
         # Set the font
         self.__font = pygame.font.SysFont("Arial", self.__internal_resolution[0] // FONT_SCALE_FACTOR)
+        self.__font2 = pygame.font.SysFont("Arial", self.__internal_resolution[0] // FONT_SCALE_FACTOR // 2)
+        self.__font3 = pygame.font.SysFont("Arial", self.__internal_resolution[0] // FONT_SCALE_FACTOR * 2)
         self.__debug_font = pygame.font.SysFont("Arial", self.__font.get_height() // 2)
 
         # Create internal surface for rendering
@@ -101,6 +105,12 @@ class Display:
     def get_font(self) -> pygame.font.Font:
         return self.__font
     
+    def get_font2(self) -> pygame.font.Font:
+        return self.__font2
+    
+    def get_font3(self) -> pygame.font.Font:
+        return self.__font3
+
     def get_title(self) -> str:
         return self.__title
 

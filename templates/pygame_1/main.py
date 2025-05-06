@@ -36,19 +36,19 @@ def main() -> None:
         surface=(button_surface := display.get_font().render("Really Cool Magic Button Does Cool Thing", False, (255, 128, 0), (200, 200, 200))),
         topleft=(display.get_internal_surface().get_width() // 2 - button_surface.get_width() // 2, 0),
         effect=lambda: buttons.append(Button(
-            surface=(button_surface := display.get_font().render("Good Morrow", False, (0, 0, 0), (200, 200, 200))),
+            surface=(button_surface := display.get_font3().render("Good Morrow", False, (0, 0, 0), (200, 200, 200))),
             topleft=(random.randrange(0, display.get_internal_surface().get_width()), random.randrange(0, display.get_internal_surface().get_height())),
             effect=lambda: None,
         )),
         debug_color=(0, 0, 255)
     ))
     buttons.append(Button(
-        surface=(button_surface := display.get_font().render("Xander", False, (255, 0, 0), (0, 0, 0))),
+        surface=(button_surface := display.get_font2().render("Xander", False, (255, 0, 0), (0, 0, 0))),
         topleft=(random.randrange(display.get_internal_surface().get_width()), random.randrange(0,display.get_internal_surface().get_height())),
         effect=lambda: None,                 
     ))
     buttons.append(Button(
-        surface=(button_surface := display.get_font().render("Holly", False, (0, 255, 0), (0, 0, 0))),
+        surface=(button_surface := display.get_font2().render("Holly", False, (0, 255, 0), (0, 0, 0))),
         topleft=(random.randrange(display.get_internal_surface().get_width()), random.randrange(0,display.get_internal_surface().get_height())),
         effect=lambda: None,
     ))    
